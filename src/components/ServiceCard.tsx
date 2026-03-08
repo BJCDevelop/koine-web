@@ -18,7 +18,7 @@ export default function ServiceCard({
       className={`rounded-2xl p-8 flex flex-col gap-4 transition-shadow hover:shadow-md ${
         featured
           ? "bg-koine-terracota text-white"
-          : "bg-white text-koine-dark"
+          : "bg-koine-cream text-koine-dark"
       }`}
     >
       <span className="text-4xl">{icon}</span>

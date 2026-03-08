@@ -35,7 +35,7 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="servicios" className="bg-koine-cream py-24 px-6">
+    <section id="servicios" className="bg-white py-24 px-6">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}
@@ -68,11 +68,11 @@ export default function Services() {
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-koine-salmon/10 border border-koine-salmon/30 rounded-2xl p-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
+          className="bg-koine-cream border border-koine-dark/10 rounded-2xl p-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
         >
           <span className="text-4xl">👨‍👩‍👧</span>
           <div className="flex-1">
-            <span className="font-[family-name:var(--font-dm-sans)] text-xs font-medium uppercase tracking-widest text-koine-terracota">
+            <span className="font-[family-name:var(--font-dm-sans)] text-xs font-medium uppercase tracking-widest text-koine-salmon">
               Familias · Contratado por instituciones
             </span>
             <h3 className="font-[family-name:var(--font-cormorant-garamond)] text-2xl font-medium text-koine-dark mt-1 mb-2">
@@ -88,7 +88,7 @@ export default function Services() {
         <div className="text-center mt-14">
           <a
             href="#contacto"
-            className="font-[family-name:var(--font-dm-sans)] inline-block border-2 border-koine-terracota text-koine-terracota text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-terracota hover:text-white transition-colors"
+            className="font-[family-name:var(--font-dm-sans)] inline-block bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-salmon transition-colors"
           >
             ¿Querés saber más? Escribinos
           </a>

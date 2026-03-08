@@ -8,17 +8,17 @@ const values = [
   {
     icon: "👂",
     title: "Escuchamos antes de proponer.",
-    text: "No llegamos con recetas armadas: cada proceso comienza por entender la realidad de cada institución o familia.",
+    text: "Cada proceso arranca con un diagnóstico real. No traemos recetas: construimos respuestas a partir de la realidad de cada institución o familia.",
   },
   {
     icon: "🎓",
-    title: "Rigor académico con calidez humana.",
-    text: "Combinamos formación sólida con empatía real. Saber y vínculo se potencian.",
+    title: "Formación con calidez.",
+    text: "Combinamos rigor pedagógico con empatía genuina. Nuestros talleres, capacitaciones y acompañamientos lo reflejan.",
   },
   {
     icon: "🏫",
-    title: "Experiencia dentro y fuera del aula.",
-    text: "Nuestro equipo conoce la educación desde adentro: el aula, la institución, el sistema, y también la crianza.",
+    title: "Conocemos la educación por dentro.",
+    text: "Docentes, directivos, familias: entendemos cada rol porque los hemos habitado. Esa experiencia guía cada intervención.",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="nosotros" className="bg-koine-cream py-24 px-6">
+    <section id="nosotros" className="bg-koine-terracota/40 py-24 px-6">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 32 }}
@@ -62,7 +62,7 @@ export default function About() {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-            className="bg-white rounded-2xl p-8 shadow-sm text-center"
+            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm text-center"
           >
             <span className="text-4xl mb-4 block">{v.icon}</span>
             <h3 className="font-[family-name:var(--font-cormorant-garamond)] text-xl font-medium text-koine-dark mb-3">
