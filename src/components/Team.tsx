@@ -8,13 +8,13 @@ import Image from "next/image";
 const members = [
   {
     name: "Bárbara Helueni",
-    role: "Socióloga. Magíster en Educación. Especialista en evaluación y diagnóstico institucional.",
+    role: "Magister en Educación. Licenciada en Sociología. Especializada en Evaluación y Diagnóstico Institucional.",
     bio: "Bárbara suma la perspectiva del sistema: la evaluación, el diagnóstico, la experiencia internacional (IIPE UNESCO) y equipos ministeriales. Y también la de ser mamá.",
     photo: "/images/perfil-barbie.png",
   },
   {
     name: "Micaela del Percio",
-    role: "Docente de nivel inicial y primer grado. Licenciada en Educación.",
+    role: "Licenciada en Gestión de Instituciones Educativas. Docente de Nivel Inicial y Primario.",
     bio: "Mica trae la mirada del aula: los años frente a chicos de inicial y primer grado, el conocimiento de lo que pasa adentro de una clase de verdad. Su experiencia directa con niños y familias le da a Koiné una base concreta e invaluable.",
     photo: "/images/perfil-mica.png",
   },
@@ -37,11 +37,11 @@ export default function Team() {
           <h2 className="font-[family-name:var(--font-cormorant-garamond)] text-4xl md:text-5xl font-medium text-white mb-6">
             Quiénes somos
           </h2>
-          <p className="font-[family-name:var(--font-dm-sans)] text-white/75 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+          {/* <p className="font-[family-name:var(--font-dm-sans)] text-white/75 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
             Somos Micaela y Bárbara. Nos une la convicción de que la educación
             transforma, y que para hacerlo necesita de personas comprometidas,
             bien formadas y dispuestas a escuchar.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14">
