@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Koiné brand colors */
+  --color-koine-terracota: #C4622D;
+  --color-koine-blue:      #1B6EF3;
+  --color-koine-navy:      #1A2F5E;
+  --color-koine-cream:     #FDF8F3;
+  --color-koine-dark:      #2C1810;
+  --color-koine-salmon:    #E8956A;
+
+  /* Fonts */
+  --font-cormorant: var(--font-cormorant-garamond);
+  --font-dm-sans:   var(--font-dm-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDF8F3;
+  color: #2C1810;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* Offset scroll for sticky navbar */
+[id] {
+  scroll-margin-top: 72px;
+}
