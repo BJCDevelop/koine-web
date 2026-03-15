@@ -2,37 +2,45 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Puzzle, Compass, Sprout, Handshake } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    icon: "📚",
-    title: "Talleres y Capacitaciones",
-    audience: "Docentes y equipos directivos",
+    icon: <Puzzle size={36} strokeWidth={1.5} />,
+    title: "Talleres y capacitaciones",
     description:
-      "Talleres y capacitaciones con enfoque innovador, didáctico y lúdico. Cada propuesta se diseña considerando el contexto del equipo. Formatos: taller único (2-4 hs), serie de encuentros, jornada institucional. Modalidad presencial o híbrida.",
+      "Cada equipo es único. Por eso nuestros talleres y capacitaciones se diseñan a medida, con un enfoque innovador, didáctico y lúdico. Desde un taller de 2 horas hasta una jornada institucional completa, en formato presencial o híbrido.",
   },
   {
-    icon: "🎯",
-    title: "Coaching Pedagógico Focalizado",
-    audience: "Directivos y docentes",
+    icon: <Compass size={36} strokeWidth={1.5} />,
+    title: "Coaching pedagógico focalizado",
     description:
-      "Trabajo en conjunto con directivos y docentes en planificación y ejecución con herramientas pedagógicas probadas. Abordaje de temáticas específicas como convivencia, vínculo con familias, y desafíos institucionales puntuales.",
-    featured: true,
+      "A veces el desafío es concreto y necesita foco. Trabajamos junto a directivos y docentes en las situaciones que más importan: convivencia, vínculo con familias, desafíos institucionales puntuales. Un acompañamiento directo, con herramientas y resultados reales.",
   },
   {
-    icon: "🤝",
-    title: "Acompañamiento Integral",
-    audience: "Instituciones educativas",
+    icon: <Sprout size={36} strokeWidth={1.5} />,
+    title: "Acompañamiento integral",
     description:
-      "La línea más robusta. Comienza con un diagnóstico profundo de la institución y se desarrolla un plan de trabajo a medida. Incluye: diagnóstico institucional, plan de mejora, acompañamiento a equipos, seguimiento con indicadores e informe final.",
+      "Algunas instituciones necesitan más que un taller. El acompañamiento integral es un proceso profundo que empieza por escuchar y entender la realidad de cada institución. Diagnóstico, plan de mejora, acompañamiento a equipos y seguimiento con indicadores. Todo a medida, con impacto real y duradero.",
+  },
+  {
+    icon: <Handshake size={36} strokeWidth={1.5} />,
+    title: "Talleres para familias",
+    description:
+      "Educar en casa también se aprende. Nuestros talleres para familias combinan conocimiento pedagógico con un clima de escucha y cercanía. Espacios para entender mejor cada etapa, acompañar con más herramientas y construir un vínculo más sólido con la escuela.",
   },
 ];
 
 export default function Services() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (i: number) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
   return (
     <section id="servicios" className="bg-white py-24 px-6">
@@ -49,8 +57,8 @@ export default function Services() {
           </h2>
         </div>
 
-        {/* Main 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {/* 4 cards — 1 col mobile, 2x2 tablet, 4 col desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -58,37 +66,19 @@ export default function Services() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
-              <ServiceCard {...s} />
+              <ServiceCard
+                {...s}
+                isOpen={openIndex === i}
+                onToggle={() => handleToggle(i)}
+              />
             </motion.div>
           ))}
         </div>
 
-        {/* 4th card — smaller / differentiated */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-koine-cream border border-koine-dark/10 rounded-2xl p-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
-        >
-          <span className="text-4xl">👨‍👩‍👧</span>
-          <div className="flex-1">
-            <span className="font-[family-name:var(--font-dm-sans)] text-xs font-medium uppercase tracking-widest text-koine-salmon">
-              Familias · Contratado por instituciones
-            </span>
-            <h3 className="font-[family-name:var(--font-cormorant-garamond)] text-2xl font-medium text-koine-dark mt-1 mb-2">
-              Talleres para Familias
-            </h3>
-            <p className="font-[family-name:var(--font-dm-sans)] text-sm text-koine-dark/70 leading-relaxed">
-              Espacios de encuentro donde las familias reciben herramientas
-              pedagógicas concretas. Foco escolar y pedagógico.
-            </p>
-          </div>
-        </motion.div>
-
         <div className="text-center mt-14">
           <a
             href="#contacto"
-            className="font-[family-name:var(--font-dm-sans)] inline-block bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-salmon transition-colors"
+            className="font-[family-name:var(--font-dm-sans)] inline-block bg-koine-terracota text-white text-base font-medium px-10 py-4 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-0.5 hover:bg-koine-salmon transition-all duration-200"
           >
             ¿Querés saber más? Escribinos
           </a>

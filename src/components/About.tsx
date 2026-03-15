@@ -3,22 +3,23 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { MessageCircle, Lightbulb, Users } from "lucide-react";
 
 const values = [
   {
-    icon: "👂",
+    icon: <MessageCircle size={36} strokeWidth={1.5} />,
     title: "Escuchamos antes de proponer",
-    text: "Cada proceso arranca con un diagnóstico real. No traemos recetas: construimos respuestas a partir de la realidad de cada institución o familia.",
+    text: "Creemos que la mejor intervención es la que nace de entender primero. Por eso cada proceso comienza con un diagnóstico real, y cada propuesta se construye desde la realidad de quien la necesita.",
   },
   {
-    icon: "🎓",
+    icon: <Lightbulb size={36} strokeWidth={1.5} />,
     title: "Formación con calidez",
-    text: "Combinamos rigor pedagógico con empatía genuina. Nuestros talleres, capacitaciones y acompañamientos lo reflejan.",
+    text: "Creemos que el conocimiento transforma más cuando viene acompañado de escucha y cercanía. Eso se refleja en cada propuesta que diseñamos.",
   },
   {
-    icon: "🏫",
-    title: "Conocemos la educación por dentro",
-    text: "Docentes, directivos, familias: entendemos cada rol porque los hemos habitado. Esa experiencia guía cada intervención.",
+    icon: <Users size={36} strokeWidth={1.5} />,
+    title: "Entendemos a cada parte",
+    text: "Docentes, directivos, familias: conocemos cada rol porque los hemos habitado. Esa experiencia guía cada propuesta.",
   },
 ];
 
@@ -46,12 +47,6 @@ export default function About() {
           e instituciones pueden descubrir un lenguaje compartido: uno que incluya y
           que invite a construir juntos.
         </p>
-
-        {/* <p className="font-[family-name:var(--font-dm-sans)] text-base md:text-lg text-koine-dark/80 leading-relaxed mb-16">
-          Somos una consultora educativa que acompaña a quienes educan:
-          instituciones, docentes y familias. Con compromiso, calidez y un
-          lenguaje que todos podemos compartir.
-        </p> */}
       </motion.div>
 
       {/* Values */}
@@ -62,9 +57,10 @@ export default function About() {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm text-center"
+            className="bg-[#FDF8F3] border border-[#E8956A]/20 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 text-center"
+            style={{ borderTop: "4px solid #C4622D" }}
           >
-            <span className="text-4xl mb-4 block">{v.icon}</span>
+            <span className="text-koine-terracota mb-4 flex justify-center">{v.icon}</span>
             <h3 className="font-[family-name:var(--font-cormorant-garamond)] text-xl font-bold text-koine-dark mb-3">
               {v.title}
             </h3>
@@ -78,7 +74,7 @@ export default function About() {
       <div className="text-center mt-14">
         <a
           href="#servicios"
-          className="font-[family-name:var(--font-dm-sans)] inline-block bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-salmon transition-colors"
+          className="font-[family-name:var(--font-dm-sans)] inline-block bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-0.5 hover:bg-koine-salmon transition-all duration-200"
         >
           Conocé nuestros servicios
         </a>

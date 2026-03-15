@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import KoineLogo from "./KoineLogo";
 
 const links = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Nosotras", href: "#nosotros" },
+  { label: "Acerca de", href: "#nosotros" },
   { label: "Servicios", href: "#servicios" },
   { label: "Equipo", href: "#equipo" },
   { label: "Contacto", href: "#contacto" },
@@ -32,11 +33,14 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#inicio"
-          className={`font-[family-name:var(--font-cormorant-garamond)] text-2xl font-semibold tracking-wide transition-colors ${
+          className={`font-[family-name:var(--font-cormorant-garamond)] text-3xl tracking-wide transition-colors ${
             scrolled ? "text-koine-dark" : "text-white"
           }`}
         >
-          Koin<span className="text-koine-salmon">é</span>
+          <KoineLogo
+            textColor={scrolled ? "text-koine-dark" : "text-white"}
+            accentColor="text-koine-terracota"
+          />
         </a>
 
         {/* Desktop links */}

@@ -8,14 +8,14 @@ import Image from "next/image";
 const members = [
   {
     name: "Bárbara Helueni",
-    role: "Magister en Educación. Licenciada en Sociología. Especializada en Evaluación y Diagnóstico Institucional.",
-    bio: "Bárbara suma la perspectiva del sistema: la evaluación, el diagnóstico, la experiencia internacional (IIPE UNESCO) y equipos ministeriales. Y también la de ser mamá.",
+    role: "Magíster en Educación (UdeSA) · Licenciada en Sociología (UBA)",
+    bio: "Bárbara es Magíster en Educación (UdeSA) y Licenciada en Sociología (UBA), especializada en evaluación para el aprendizaje, gestión y fortalecimiento institucional. Su trayectoria abarca la docencia en escuelas de contextos vulnerables, la política educativa y una amplia trayectoria en el IIPE UNESCO acompañando equipos ministeriales de América Latina y el Caribe.",
     photo: "/images/perfil-barbie.png",
   },
   {
-    name: "Micaela del Percio",
-    role: "Licenciada en Gestión de Instituciones Educativas. Docente de Nivel Inicial y Primario.",
-    bio: "Mica trae la mirada del aula: los años frente a chicos de inicial y primer grado, el conocimiento de lo que pasa adentro de una clase de verdad. Su experiencia directa con niños y familias le da a Koiné una base concreta e invaluable.",
+    name: "Micaela Del Percio",
+    role: "Licenciada en Gestión de Instituciones Educativas",
+    bio: "Micaela es Licenciada y Profesora de Nivel Inicial y Primario. Trabaja con primera infancia y niños de nivel primario, coordina equipos docentes y acompaña a familias. Su propuesta pedagógica pone en el centro el juego, la exploración y el vínculo como motores del aprendizaje. Cuenta con formación especializada en articulación entre niveles inicial y primario, y en educación en contextos de vulnerabilidad.",
     photo: "/images/perfil-mica.png",
   },
 ];
@@ -54,12 +54,12 @@ export default function Team() {
               className="flex flex-col items-center text-center gap-6"
             >
               {/* Photo */}
-              <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-koine-salmon/40">
+              <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-koine-salmon/40">
                 <Image
                   src={member.photo}
                   alt={member.name}
-                  width={144}
-                  height={144}
+                  width={192}
+                  height={192}
                   className="w-full h-full object-cover"
                 />
               </div>

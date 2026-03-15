@@ -1,3 +1,5 @@
+import KoineLogo from "./KoineLogo";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -7,9 +9,9 @@ export default function Footer() {
         {/* Logo */}
         <a
           href="#inicio"
-          className="font-[family-name:var(--font-cormorant-garamond)] text-3xl font-semibold text-white"
+          className="font-[family-name:var(--font-cormorant-garamond)] text-3xl tracking-wide"
         >
-          Koin<span className="text-koine-salmon">é</span>
+          <KoineLogo textColor="text-white" accentColor="text-koine-terracota" />
         </a>
 
         {/* Tagline */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import KoineLogo from "./KoineLogo";
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen bg-koine-salmon overflow-hidden flex flex-col items-center justify-center text-center px-6 py-24"
     >
-      {/* Video background — desktop only, doesn't load on mobile */}
+      {/* Video background — desktop */}
       <video
         className="hidden md:block absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -17,7 +18,19 @@ export default function Hero() {
         playsInline
         aria-hidden="true"
       >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        <source src="/videos/hero-desktop-full.mp4" type="video/mp4" />
+      </video>
+
+      {/* Video background — mobile */}
+      <video
+        className="block md:hidden absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+      >
+        <source src="/videos/hero-mobile-full.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay — over video on desktop, over salmon fallback on mobile */}
@@ -31,13 +44,13 @@ export default function Hero() {
         className="relative z-10 max-w-3xl"
       >
         {/* Logo */}
-        <h1 className="font-[family-name:var(--font-cormorant-garamond)] text-6xl md:text-8xl font-semibold text-white mb-2 tracking-wide">
-          Koin<span className="text-koine-salmon">é</span>
+        <h1 className="font-[family-name:var(--font-cormorant-garamond)] text-6xl md:text-8xl tracking-wide mb-2">
+          <KoineLogo textColor="text-white" accentColor="text-koine-terracota" />
         </h1>
 
         {/* Subtitle */}
         <p className="font-[family-name:var(--font-dm-sans)] text-white/60 text-xs md:text-sm tracking-[0.25em] uppercase mb-10">
-          Consultoría Educativa
+          Consultora educativa
         </p>
 
         {/* Tagline */}
@@ -51,13 +64,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#servicios"
-            className="font-[family-name:var(--font-dm-sans)] bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-salmon transition-colors"
+            className="font-[family-name:var(--font-dm-sans)] bg-koine-terracota text-white text-sm font-medium px-8 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-0.5 hover:bg-koine-salmon transition-all duration-200"
           >
             Conocé nuestros servicios
           </a>
           <a
             href="#contacto"
-            className="font-[family-name:var(--font-dm-sans)] bg-white text-koine-dark text-sm font-medium px-8 py-3.5 rounded-full hover:bg-koine-cream transition-colors"
+            className="font-[family-name:var(--font-dm-sans)] bg-white text-koine-dark text-sm font-medium px-8 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-0.5 hover:bg-koine-cream transition-all duration-200"
           >
             Escribinos
           </a>
