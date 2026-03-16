@@ -9,7 +9,7 @@ const values = [
   {
     icon: <MessageCircle size={36} strokeWidth={1.5} />,
     title: "Escuchamos antes de proponer",
-    text: "Creemos que la mejor intervención es la que nace de entender primero. Por eso cada proceso comienza con un diagnóstico real, y cada propuesta se construye desde la realidad de quien la necesita.",
+    text: "Estamos convencidas que la mejor intervención es la que nace de entender primero. Por eso cada proceso comienza con un diagnóstico real, y cada propuesta se construye desde la realidad de quien la necesita.",
   },
   {
     icon: <Lightbulb size={36} strokeWidth={1.5} />,
@@ -41,7 +41,7 @@ export default function About() {
         </h2>
 
         <p className="font-[family-name:var(--font-dm-sans)] text-base md:text-lg text-koine-dark/80 leading-relaxed mb-10">
-          Koiné era el griego común que hablaba todo el mundo mediterráneo
+          Koin<span className="text-koine-terracota font-bold">é</span> era el griego común que hablaba todo el mundo mediterráneo
           antiguo: el idioma que permitía entenderse más allá de las
           diferencias. Tomamos ese nombre porque creemos que docentes, familias
           e instituciones pueden descubrir un lenguaje compartido: uno que incluya y

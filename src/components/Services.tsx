@@ -50,7 +50,7 @@ export default function Services() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto"
-      >
+        >
         <div className="text-center mb-14">
           <h2 className="font-[family-name:var(--font-cormorant-garamond)] text-4xl md:text-5xl font-medium text-koine-dark">
             Nuestros servicios
