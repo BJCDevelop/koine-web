@@ -16,8 +16,11 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/videos/hero-desktop-poster.jpg"
         aria-hidden="true"
       >
+        <source src="/videos/hero-desktop-opt.webm" type="video/webm" />
         <source src="/videos/hero-desktop-full.mp4" type="video/mp4" />
       </video>
 
@@ -28,8 +31,11 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/videos/hero-mobile-poster.jpg"
         aria-hidden="true"
       >
+        <source src="/videos/hero-mobile-opt.webm" type="video/webm" />
         <source src="/videos/hero-mobile-full.mp4" type="video/mp4" />
       </video>
 
