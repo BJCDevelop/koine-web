@@ -156,7 +156,7 @@ export default function Contact() {
                 onChange={(e) => setRole(e.target.value)}
                 className="font-[family-name:var(--font-dm-sans)] w-full border border-koine-dark/20 rounded-xl px-4 py-3 text-sm text-koine-dark bg-white focus:outline-none focus:border-koine-terracota"
               >
-                <option value="">Soy...</option>
+                <option value="">{senderType === "institucion" ? "Somos..." : "Soy..."}</option>
                 <option value="directivo">Directivo/a</option>
                 <option value="docente">Docente</option>
                 <option value="familia">Familia</option>
