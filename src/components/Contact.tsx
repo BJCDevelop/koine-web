@@ -12,8 +12,10 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  const [senderType, setSenderType] = useState<"persona" | "institucion">("persona");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -25,11 +27,11 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, role, message }),
+        body: JSON.stringify({ senderType, name, email, phone, role, message }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
-      setName(""); setEmail(""); setRole(""); setMessage("");
+      setName(""); setEmail(""); setPhone(""); setRole(""); setMessage("");
     } catch {
       setStatus("error");
     }
@@ -47,10 +49,12 @@ export default function Contact() {
         <h2 className="font-[family-name:var(--font-cormorant-garamond)] text-4xl md:text-5xl font-medium text-koine-dark mb-6">
           Hablemos
         </h2>
-        <p className="font-[family-name:var(--font-dm-sans)] text-koine-dark/75 text-base md:text-lg leading-relaxed mb-10">
+        <p className="font-[family-name:var(--font-dm-sans)] text-koine-dark/75 text-base md:text-lg leading-relaxed mb-2">
           ¿Querés saber más sobre lo que hacemos, o tenés una idea de lo que
-          necesitás y querés conversarlo? Escribinos. De ahí en adelante, lo
-          construimos juntos.
+          necesitás y querés conversarlo? Escribinos.
+        </p>
+        <p className="font-[family-name:var(--font-dm-sans)] text-koine-dark/75 text-base md:text-lg leading-relaxed mb-6">
+          De ahí en adelante, lo construimos juntos.
         </p>
 
         {/* Contact buttons */}
@@ -106,9 +110,25 @@ export default function Contact() {
               O completá este formulario
             </h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div className="flex rounded-xl overflow-hidden border border-koine-dark/20 text-sm font-medium font-[family-name:var(--font-dm-sans)]">
+                <button
+                  type="button"
+                  onClick={() => setSenderType("persona")}
+                  className={`flex-1 py-3 transition-colors ${senderType === "persona" ? "bg-koine-terracota text-white" : "bg-white text-koine-dark/60 hover:bg-koine-cream"}`}
+                >
+                  Persona
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSenderType("institucion")}
+                  className={`flex-1 py-3 transition-colors ${senderType === "institucion" ? "bg-koine-terracota text-white" : "bg-white text-koine-dark/60 hover:bg-koine-cream"}`}
+                >
+                  Institución
+                </button>
+              </div>
               <input
                 type="text"
-                placeholder="Tu nombre"
+                placeholder={senderType === "persona" ? "Tu nombre" : "Nombre de la institución"}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -120,6 +140,15 @@ export default function Contact() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="font-[family-name:var(--font-dm-sans)] w-full border border-koine-dark/20 rounded-xl px-4 py-3 text-sm text-koine-dark bg-white focus:outline-none focus:border-koine-terracota"
+              />
+              <input
+                type="tel"
+                placeholder="Tu teléfono (ej: +54 9 11 1234 5678)"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                pattern="^\+[0-9\s\-]{7,20}$"
+                title="Ingresá tu número en formato internacional, empezando con +"
                 className="font-[family-name:var(--font-dm-sans)] w-full border border-koine-dark/20 rounded-xl px-4 py-3 text-sm text-koine-dark bg-white focus:outline-none focus:border-koine-terracota"
               />
               <select

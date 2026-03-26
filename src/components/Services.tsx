@@ -29,7 +29,7 @@ const services = [
     icon: <Handshake size={36} strokeWidth={1.5} />,
     title: "Talleres para familias",
     description:
-      "Educar en casa también se aprende. Nuestros talleres para familias combinan conocimiento pedagógico con un clima de escucha y cercanía. Espacios para entender mejor cada etapa, acompañar con más herramientas y construir un vínculo más sólido con la escuela.",
+      "Educar en casa también se aprende. Nuestros talleres para familias combinan conocimiento pedagógico con un clima de escucha y cercanía. Espacios para entender mejor cada etapa, acompañar con herramientas y construir un vínculo más sólido con la escuela.",
   },
 ];
 

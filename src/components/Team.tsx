@@ -13,9 +13,9 @@ const members = [
     photo: "/images/perfil-barbie.png",
   },
   {
-    name: "Micaela Del Percio",
-    role: "Licenciada en Gestión de Instituciones Educativas",
-    bio: "Micaela es Licenciada y Profesora de Nivel Inicial y Primario. Trabaja con primera infancia y niños de nivel primario, coordina equipos docentes y acompaña a familias. Su propuesta pedagógica pone en el centro el juego, la exploración y el vínculo como motores del aprendizaje. Cuenta con formación especializada en articulación entre niveles inicial y primario, y en educación en contextos de vulnerabilidad.",
+    name: "Micaela Belén Del Percio",
+    role: "Licenciada en Gestión de Instituciones Educativas (UDELA)",
+    bio: "Micaela es Licenciada y Profesora de Nivel Inicial y Primario, especializada en primera infancia, articulación entre niveles y educación en contextos de vulnerabilidad. Su trayectoria incluye el trabajo con niños y familias, la coordinación de equipos docentes. Su enfoque pedagógico pone en el centro el juego, la exploración y el vínculo como motores del aprendizaje.",
     photo: "/images/perfil-mica.png",
   },
 ];
@@ -83,7 +83,7 @@ export default function Team() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="font-[family-name:var(--font-cormorant-garamond)] italic text-xl md:text-2xl text-white/80 text-center mt-16 max-w-2xl mx-auto leading-relaxed"
+          className="font-[family-name:var(--font-cormorant-garamond)] not-italic text-xl md:text-2xl text-center mt-16 max-w-2xl mx-auto leading-relaxed text-white/90 bg-white/10 px-6 py-4 rounded-xl md:italic md:text-koine-terracota md:bg-transparent md:px-0 md:py-0 md:rounded-none"
         >
           Juntas combinan rigor académico con experiencia práctica, saber
           técnico con empatía, y una profunda pasión por acompañar procesos

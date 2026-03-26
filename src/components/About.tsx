@@ -45,7 +45,7 @@ export default function About() {
           antiguo: el idioma que permitía entenderse más allá de las
           diferencias. Tomamos ese nombre porque creemos que docentes, familias
           e instituciones pueden descubrir un lenguaje compartido: uno que incluya y
-          que invite a construir juntos.
+          que <strong className="text-koine-terracota">invite a construir juntos</strong>.
         </p>
       </motion.div>
 
