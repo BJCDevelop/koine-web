@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const members = [
   {
@@ -52,11 +53,14 @@ export default function Team() {
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
               className="flex flex-col items-center text-center gap-6"
             >
-              {/* Photo placeholder */}
-              <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-koine-salmon/40 bg-white/10 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-cormorant-garamond)] text-5xl font-medium text-koine-salmon/80">
-                  {member.name.split(" ").map((n) => n[0]).slice(0, 2).join("")}
-                </span>
+              <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-koine-salmon/40">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  width={192}
+                  height={192}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div>

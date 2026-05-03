@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
-const WHATSAPP_NUMBER = "5491100000000"; // Replace with real number
+const WHATSAPP_NUMBER = "5491172393571";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -12,7 +12,6 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [senderType, setSenderType] = useState<"persona" | "institucion">("persona");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -27,7 +26,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ senderType, name, email, phone, role, message }),
+        body: JSON.stringify({ name, email, phone, role, message }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -77,7 +76,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="mailto:contacto@koine.edu.ar"
+            href="mailto:contacto@koineconsultora.com.ar"
             className="font-[family-name:var(--font-dm-sans)] inline-flex items-center justify-center gap-3 bg-koine-terracota text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-koine-salmon transition-colors"
           >
             <svg
@@ -110,25 +109,9 @@ export default function Contact() {
               O completá este formulario
             </h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="flex rounded-xl overflow-hidden border border-koine-dark/20 text-sm font-medium font-[family-name:var(--font-dm-sans)]">
-                <button
-                  type="button"
-                  onClick={() => setSenderType("persona")}
-                  className={`flex-1 py-3 transition-colors ${senderType === "persona" ? "bg-koine-terracota text-white" : "bg-white text-koine-dark/60 hover:bg-koine-cream"}`}
-                >
-                  Persona
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSenderType("institucion")}
-                  className={`flex-1 py-3 transition-colors ${senderType === "institucion" ? "bg-koine-terracota text-white" : "bg-white text-koine-dark/60 hover:bg-koine-cream"}`}
-                >
-                  Institución
-                </button>
-              </div>
               <input
                 type="text"
-                placeholder={senderType === "persona" ? "Tu nombre" : "Nombre de la institución"}
+                placeholder="Tu nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -156,7 +139,7 @@ export default function Contact() {
                 onChange={(e) => setRole(e.target.value)}
                 className="font-[family-name:var(--font-dm-sans)] w-full border border-koine-dark/20 rounded-xl px-4 py-3 text-sm text-koine-dark bg-white focus:outline-none focus:border-koine-terracota"
               >
-                <option value="">{senderType === "institucion" ? "Somos..." : "Soy..."}</option>
+                <option value="">Soy...</option>
                 <option value="directivo">Directivo/a</option>
                 <option value="docente">Docente</option>
                 <option value="familia">Familia</option>

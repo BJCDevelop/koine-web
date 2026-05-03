@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     subject: `Nueva consulta de ${name}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px;">
-        <h2 style="color: #C4622D;">Nueva consulta desde koine.edu.ar</h2>
+        <h2 style="color: #C4622D;">Nueva consulta desde koineconsultora.com.ar</h2>
         <table style="border-collapse: collapse; width: 100%;">
           <tr><td style="padding: 8px; font-weight: bold;">Nombre</td><td style="padding: 8px;">${name}</td></tr>
           <tr><td style="padding: 8px; font-weight: bold;">Email</td><td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td></tr>
