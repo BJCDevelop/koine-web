@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
 </html>`;
 
   const { error } = await resend.emails.send({
-    from: "Koiné Web <onboarding@resend.dev>",
+    from: "Koiné Web <contacto@koineconsultora.com.ar>",
     to: process.env.CONTACT_EMAIL!,
     replyTo: email,
     subject: `Nueva consulta de ${name}`,
