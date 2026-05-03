@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const WHATSAPP_NUMBER = "5491172393571";
+const WHATSAPP_MSG = encodeURIComponent("¡Hola! Me contacto desde el sitio web de Koiné. Quisiera saber más sobre sus servicios.");
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -59,7 +60,7 @@ export default function Contact() {
         {/* Contact buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
             target="_blank"
             rel="noopener noreferrer"
             className="font-[family-name:var(--font-dm-sans)] inline-flex items-center justify-center gap-3 bg-[#25D366] text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-[#1ebe5d] transition-colors"

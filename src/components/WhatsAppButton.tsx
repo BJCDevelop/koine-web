@@ -1,9 +1,10 @@
 const WHATSAPP_NUMBER = "5491172393571";
+const WHATSAPP_MSG = encodeURIComponent("¡Hola! Me contacto desde el sitio web de Koiné. Quisiera saber más sobre sus servicios.");
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
